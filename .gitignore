@@ -1,0 +1,20 @@
+*.iml
+.gradle
+.DS_Store
+build
+captures
+.externalNativeBuild
+.cxx
+local.properties
+xcuserdata
+/keys/
+/client/ios/Pods/
+
+# Idea
+**/.idea/*
+# Allow code styles and run configurations
+!**/.idea/codeStyles
+!**/.idea/runConfigurations
+!**/.idea/icon.svg
+!**/.idea/.name
+/.kotlin/
