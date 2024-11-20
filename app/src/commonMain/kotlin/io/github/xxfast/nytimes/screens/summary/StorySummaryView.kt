@@ -33,7 +33,7 @@ import io.github.xxfast.nytimes.screens.story.ArticleImage
 fun StorySummaryView(
   summary: SummaryState,
   isSelected: Boolean,
-  onSelect: (section: TopStorySection, uri: ArticleUri, title: String) -> Unit,
+  onSelect: (title: String, description: String, image: String) -> Unit,
   modifier: Modifier = Modifier,
 ) {
   Surface(
@@ -41,7 +41,7 @@ fun StorySummaryView(
     tonalElevation = if (isSelected) 2.dp else 0.dp,
     modifier = modifier
       .clip(MaterialTheme.shapes.extraLarge)
-      .clickable { onSelect(summary.section, summary.uri, summary.title) }
+      .clickable { onSelect(summary.title, summary.description, summary.imageUrl ?: "") }
   ) {
     Column(
       verticalArrangement = Arrangement.spacedBy(4.dp),
@@ -52,43 +52,25 @@ fun StorySummaryView(
           .fillMaxWidth()
           .height(180.dp)
           .clip(MaterialTheme.shapes.extraLarge)
-          .background(MaterialTheme.colorScheme.surfaceColorAtElevation(1.dp))
       ) {
         ArticleImage(summary.imageUrl)
       }
 
       Text(
+        modifier = Modifier.padding(top = 8.dp, bottom = 4.dp, start = 2.dp, end = 2.dp),
         text = summary.title,
+        maxLines = 2,
+        overflow = TextOverflow.Ellipsis,
         style = MaterialTheme.typography.headlineSmall,
       )
 
       Text(
+        modifier = Modifier.padding(top = 4.dp, bottom = 8.dp, start = 2.dp, end = 2.dp),
         text = summary.description,
-        style = MaterialTheme.typography.bodySmall,
+        style = MaterialTheme.typography.labelMedium,
         maxLines = 2,
         overflow = TextOverflow.Ellipsis
       )
-
-      Row(
-        horizontalArrangement = Arrangement.spacedBy(4.dp),
-        verticalAlignment = Alignment.CenterVertically
-      ) {
-        ElevatedAssistChip(
-          onClick = { },
-          label = {
-            Text(
-              text = summary.section.name,
-              style = MaterialTheme.typography.labelMedium
-            )
-          },
-          shape = RoundedCornerShape(16.dp),
-        )
-
-        Text(
-          text = summary.byline,
-          style = MaterialTheme.typography.labelSmall,
-        )
-      }
     }
   }
 }

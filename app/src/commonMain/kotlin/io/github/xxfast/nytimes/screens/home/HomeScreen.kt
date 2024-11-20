@@ -2,6 +2,7 @@ package io.github.xxfast.nytimes.screens.home
 
 import androidx.compose.runtime.Composable
 import com.arkivanov.decompose.ExperimentalDecomposeApi
+import com.arkivanov.decompose.extensions.compose.stack.animation.fade
 import com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.predictiveBackAnimation
 import com.arkivanov.decompose.extensions.compose.stack.animation.slide
 import com.arkivanov.decompose.extensions.compose.stack.animation.stackAnimation
@@ -14,7 +15,7 @@ import io.github.xxfast.decompose.router.stack.rememberRouter
 import io.github.xxfast.nytimes.screens.home.StoryHomeScreen.Details
 import io.github.xxfast.nytimes.screens.home.StoryHomeScreen.List
 import io.github.xxfast.nytimes.screens.story.StoryScreen
-import io.github.xxfast.nytimes.screens.topStories.TopStoriesScreen
+import io.github.xxfast.nytimes.screens.news.NewsScreen
 
 @OptIn(ExperimentalDecomposeApi::class)
 @Composable
@@ -30,21 +31,19 @@ fun HomeScreen() {
     ),
   ) { screen ->
     when (screen) {
-      List -> TopStoriesScreen(
+      List -> NewsScreen(
         onSelectArticle = { section, uri, title ->
-          router.push(Details(section, uri, title))
+          router.push(Details(section, title, uri))
         }
       )
 
       is Details -> StoryScreen(
-        section = screen.section,
-        uri = screen.uri,
         title = screen.title,
+        description = screen.description,
+        imageUrl = screen.image_url,
         onBack = { router.pop() },
-        onSelectRelated = { section, uri, title ->
-          router.push(Details(section, uri, title))
-        }
       )
     }
   }
 }
+

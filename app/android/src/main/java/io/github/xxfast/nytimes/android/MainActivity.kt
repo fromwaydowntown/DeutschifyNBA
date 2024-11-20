@@ -16,6 +16,7 @@ import io.github.xxfast.androidx.compose.material3.windowsizeclass.LocalWindowSi
 import io.github.xxfast.decompose.router.LocalRouterContext
 import io.github.xxfast.decompose.router.RouterContext
 import io.github.xxfast.decompose.router.defaultRouterContext
+import io.github.xxfast.nytimes.components.initializeAudioPlayer
 import io.github.xxfast.nytimes.di.appStorage
 import io.github.xxfast.nytimes.screens.home.HomeScreen
 import kotlinx.io.files.Path
@@ -23,6 +24,8 @@ import kotlinx.io.files.Path
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    initializeAudioPlayer(this)
 
     WindowCompat.setDecorFitsSystemWindows(window, false)
     val rootComponentContext: RouterContext = defaultRouterContext()
@@ -37,7 +40,7 @@ class MainActivity : ComponentActivity() {
         LocalRouterContext provides rootComponentContext,
         LocalWindowSizeClass provides windowSizeClass,
       ) {
-        NyTimesTheme {
+        DeutschifyTheme {
           Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background

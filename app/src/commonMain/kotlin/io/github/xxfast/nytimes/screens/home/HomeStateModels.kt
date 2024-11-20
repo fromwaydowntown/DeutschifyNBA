@@ -11,8 +11,8 @@ sealed class StoryHomeScreen {
 
   @Serializable
   data class Details(
-    val section: TopStorySection,
-    val uri: ArticleUri,
-    val title: String
+    val title: String,
+    val description: String,
+    val image_url: String
   ) : StoryHomeScreen()
 }

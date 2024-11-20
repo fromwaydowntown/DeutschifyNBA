@@ -1,6 +1,5 @@
 package io.github.xxfast.nytimes.data
 
-import io.github.xxfast.nytimes.app.BuildKonfig
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
@@ -18,9 +17,8 @@ val HttpClient = HttpClient {
 
   defaultRequest {
     url {
-      host = "api.nytimes.com"
+      host = "deutschifytelegram.fly.dev"
       protocol = URLProtocol.HTTPS
-      parameters.append("api-key", BuildKonfig.API_KEY)
     }
   }
 }

@@ -32,7 +32,7 @@ fun main() {
     appStorage = path
 
     Window(
-      title = "The New York Times",
+      title = "NBA Deutschify",
       state = windowState,
       onCloseRequest = { exitApplication() }
     ) {

@@ -45,6 +45,8 @@ kotlin {
     browser()
   }
 
+  jvmToolchain(17) // Set the JVM toolchain to Java 17
+
   sourceSets {
     val commonMain by getting {
       dependencies {
@@ -80,6 +82,7 @@ kotlin {
         implementation(libs.ktor.client.cio)
         implementation(libs.kstore.file)
         implementation(libs.androidx.compose.windowsizeclass)
+        implementation(libs.ui.tooling.preview)
       }
     }
 
@@ -113,6 +116,13 @@ kotlin {
   }
 }
 
+// Configure Kotlin JVM target
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+  kotlinOptions {
+    jvmTarget = "17"
+  }
+}
+
 android {
   namespace = "io.github.xxfast.nytimes.app"
   compileSdk = 34
@@ -125,18 +135,13 @@ android {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
   }
+
+
 }
 
 buildkonfig {
-  packageName = "io.github.xxfast.nytimes.app"
+  packageName = "deutschify.ios"
 
   defaultConfigs {
-    val apiKey: String = gradleLocalProperties(rootDir).getProperty("apiKey")
-
-    require(apiKey.isNotEmpty()) {
-      "Register your api key from developer.nytimes.com and place it in local.properties as `apiKey`"
-    }
-
-    buildConfigField(STRING, "API_KEY", apiKey)
   }
 }

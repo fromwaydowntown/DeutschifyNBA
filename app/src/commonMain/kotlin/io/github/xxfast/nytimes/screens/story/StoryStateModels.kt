@@ -1,7 +1,6 @@
 package io.github.xxfast.nytimes.screens.story
 
-import io.github.xxfast.nytimes.models.Article
-import io.github.xxfast.nytimes.screens.summary.SummaryState
+import io.github.xxfast.nytimes.models.SummaryState
 import kotlinx.serialization.Serializable
 
 val Loading: Nothing? = null
@@ -11,13 +10,16 @@ val DontKnowYet: Nothing? = null
 data class StoryState(
   val title: String,
   // We can save the whole model in state here because we can fit it in state
-  val article: Article? = Loading,
-  val related: List<SummaryState>? = Loading,
+  val article: SummaryState? = null,
   val isSaved: Boolean? = DontKnowYet,
+  val isPlaying: Boolean,
 )
 
 sealed interface StoryEvent {
   data object Refresh : StoryEvent
   data object Save : StoryEvent
-}
+  data object Play : StoryEvent
+
+  }
+
 

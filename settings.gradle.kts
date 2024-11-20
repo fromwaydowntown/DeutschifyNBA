@@ -13,10 +13,7 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "NYTimes-KMP"
+rootProject.name = "deutschify-kmp"
 
 include(":app")
 include(":app:android")
-include(":app:desktop")
-include(":app:web")
-include(":app:wear")

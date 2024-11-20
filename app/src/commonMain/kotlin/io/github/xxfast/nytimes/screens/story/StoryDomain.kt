@@ -2,81 +2,81 @@ package io.github.xxfast.nytimes.screens.story
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import io.github.xxfast.kstore.KStore
-import io.github.xxfast.nytimes.api.NyTimesWebService
-import io.github.xxfast.nytimes.models.Article
-import io.github.xxfast.nytimes.models.ArticleUri
+import io.github.xxfast.nytimes.api.DeutschifyWebService
+import io.github.xxfast.nytimes.components.AudioPlayer
+import io.github.xxfast.nytimes.components.createAudioPlayer
 import io.github.xxfast.nytimes.models.SavedArticles
-import io.github.xxfast.nytimes.models.TopStoryResponse
-import io.github.xxfast.nytimes.models.TopStorySection
-import io.github.xxfast.nytimes.screens.summary.SummaryState
+import io.github.xxfast.nytimes.models.SummaryState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import io.ktor.client.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
+
+var selectedArticle: io.github.xxfast.nytimes.screens.summary.SummaryState? = null
 
 @Composable
 fun StoryDomain(
-  section: TopStorySection,
-  uri: ArticleUri,
-  title: String,
-  initialState: StoryState,
-  events: Flow<StoryEvent>,
-  webService: NyTimesWebService,
-  store: KStore<SavedArticles>,
+    title: String,
+    initialState: StoryState,
+    events: Flow<StoryEvent>,
+    store: KStore<SavedArticles>,
+    deutschifyWebService: DeutschifyWebService,
+    audioPlayer: AudioPlayer
 ): StoryState {
-  var article: Article? by remember { mutableStateOf(initialState.article) }
-  var related: List<SummaryState>? by remember { mutableStateOf(initialState.related) }
-  var refreshes: Int by remember { mutableStateOf(0) }
+    var article: SummaryState? by remember { mutableStateOf(initialState.article) }
+    var isPlaying: Boolean by remember { mutableStateOf(false) }
+    var refreshes: Int by remember { mutableStateOf(0) }
+    var isSaved: Boolean by remember { mutableStateOf(false) }
 
-  val isSaved: Boolean? by store.updates
-    .map { articles -> articles?.any { article -> article.uri == uri } }
-    .collectAsState(DontKnowYet)
-
-  LaunchedEffect(refreshes) {
-    // Don't autoload the stories when restored from process death
-    if (refreshes == 0 && article != Loading) return@LaunchedEffect
-
-    article = Loading
-
-    val stories: List<Article>? = webService.topStories(section).getOrNull()?.results
-
-    // Get the article from store, if not found get a fresh one
-    article = store.get().orEmpty()
-      .find { article -> article.uri == uri }
-      ?: stories?.find { it.uri == uri }
-
-    // Related would be just the top 3 articles under the same sections
-    related = stories
-      ?.filter { it.uri != uri }
-      ?.shuffled()
-      ?.take(3)
-      ?.map(::SummaryState)
-  }
-
-  LaunchedEffect(Unit) {
-    events.collect { event ->
-      when (event) {
-        StoryEvent.Refresh -> refreshes++
-
-        StoryEvent.Save -> launch(Dispatchers.Unconfined) {
-          store.update { articles ->
-            val articleToSave: Article? = article
-            when {
-              articleToSave != null && isSaved == false -> articles?.plus(articleToSave)
-              articleToSave != null && isSaved == true -> articles?.minus(articleToSave)
-              else -> articles
+    LaunchedEffect(Unit) {
+        events.collect { event ->
+            when (event) {
+                StoryEvent.Refresh -> refreshes++
+                StoryEvent.Save -> launch(Dispatchers.Unconfined) {
+                    store.update { savedArticles ->
+                        val currentArticle = article
+                        if (currentArticle != null) {
+                            isSaved = !isSaved
+                            savedArticles
+                        } else savedArticles
+                    }
+                }
+                StoryEvent.Play -> {
+                    if (isPlaying) {
+                        audioPlayer.pause()
+                    } else {
+                        val audioData = getAudioData(deutschifyWebService, selectedArticle?.description ?: "")
+                        audioPlayer.play(audioData)
+                    }
+                    isPlaying = !isPlaying
+                }
             }
-          }
         }
-      }
     }
-  }
 
-  return StoryState(title, article, related, isSaved)
+    return StoryState(
+        title = title,
+        article = article,
+        isSaved = isSaved,
+        isPlaying = isPlaying
+    )
+}
+
+private val httpClient = HttpClient()
+
+private suspend fun getAudioData(deutschifyWebService: DeutschifyWebService, text: String): ByteArray {
+    return try {
+        deutschifyWebService.generateAudio(text)
+    } catch (e: Exception) {
+        // Handle exceptions, such as network errors
+        throw Exception("Error fetching audio data: ${e.message}")
+    }
 }
