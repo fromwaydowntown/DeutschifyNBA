@@ -24,6 +24,7 @@ fun DeutschifyTheme(
   darkTheme: Boolean = isSystemInDarkTheme(),
   content: @Composable () -> Unit
 ) {
+
   val context: Context = LocalContext.current
 
   val colorScheme = when {
