@@ -11,11 +11,11 @@ plugins {
 }
 
 android {
-  namespace = "io.github.xxfast.nytimes.android"
+  namespace = "clutchapps.deutschify.android"
   compileSdk = 34
 
   defaultConfig {
-    applicationId = "io.github.xxfast.nytimes.android"
+    applicationId = "clutchapps.deutschify.android"
     minSdk = 25
     targetSdk = 34
     versionCode = 1

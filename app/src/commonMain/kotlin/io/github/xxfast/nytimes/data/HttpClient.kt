@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.data
+package clutchapps.deutschify.data
 
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation

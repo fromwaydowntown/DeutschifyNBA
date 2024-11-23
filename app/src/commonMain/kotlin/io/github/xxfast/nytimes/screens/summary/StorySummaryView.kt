@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.screens.summary
+package clutchapps.deutschify.screens.summary
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -25,9 +25,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.xxfast.nytimes.models.ArticleUri
-import io.github.xxfast.nytimes.models.TopStorySection
-import io.github.xxfast.nytimes.screens.story.ArticleImage
+import clutchapps.deutschify.models.ArticleUri
+import clutchapps.deutschify.models.TopStorySection
+import clutchapps.deutschify.screens.story.ArticleImage
 
 @Composable
 fun StorySummaryView(

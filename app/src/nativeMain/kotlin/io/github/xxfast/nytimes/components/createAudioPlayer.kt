@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.components
+package clutchapps.deutschify.components
 
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.allocArrayOf

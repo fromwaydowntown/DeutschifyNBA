@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.android
+package clutchapps.deutschify.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,9 +16,9 @@ import io.github.xxfast.androidx.compose.material3.windowsizeclass.LocalWindowSi
 import io.github.xxfast.decompose.router.LocalRouterContext
 import io.github.xxfast.decompose.router.RouterContext
 import io.github.xxfast.decompose.router.defaultRouterContext
-import io.github.xxfast.nytimes.components.initializeAudioPlayer
-import io.github.xxfast.nytimes.di.appStorage
-import io.github.xxfast.nytimes.screens.home.HomeScreen
+import clutchapps.deutschify.components.initializeAudioPlayer
+import clutchapps.deutschify.di.appStorage
+import clutchapps.deutschify.screens.home.HomeScreen
 import kotlinx.io.files.Path
 
 class MainActivity : ComponentActivity() {

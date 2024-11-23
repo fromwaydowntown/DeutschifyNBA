@@ -1,3 +1,3 @@
-package io.github.xxfast.nytimes.models
+package clutchapps.deutschify.models
 
 typealias SavedArticles = Set<SummaryState>

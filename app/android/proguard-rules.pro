@@ -17,7 +17,7 @@
 }
 
 # Models for serialisation/deseiralisation
--keep class io.github.xxfast.nytimes.models.** { *; }
+-keep class clutchapps.deutschify.models.** { *; }
 
 # TODO: Remove after transitive dependency on okhttp is updated
 # https://stackoverflow.com/questions/73748946/proguard-r8-warnings

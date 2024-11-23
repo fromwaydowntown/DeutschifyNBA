@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.screens.story
+package clutchapps.deutschify.screens.story
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -51,7 +51,7 @@ import com.seiko.imageloader.model.ImageResult
 import com.seiko.imageloader.rememberImageAction
 import com.seiko.imageloader.rememberImageActionPainter
 import io.github.xxfast.decompose.router.rememberOnRoute
-import io.github.xxfast.nytimes.utils.statusBarPadding
+import clutchapps.deutschify.utils.statusBarPadding
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

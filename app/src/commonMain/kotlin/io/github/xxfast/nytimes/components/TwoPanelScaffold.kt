@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.components
+package clutchapps.deutschify.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.EnterTransition

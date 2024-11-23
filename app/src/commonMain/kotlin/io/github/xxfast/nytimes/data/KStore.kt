@@ -1,6 +1,6 @@
-package io.github.xxfast.nytimes.data
+package clutchapps.deutschify.data
 
 import io.github.xxfast.kstore.KStore
-import io.github.xxfast.nytimes.models.SavedArticles
+import clutchapps.deutschify.models.SavedArticles
 
 expect val store: KStore<SavedArticles>

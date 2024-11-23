@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.utils
+package clutchapps.deutschify.utils
 
 import androidx.compose.foundation.layout.WindowInsets
 

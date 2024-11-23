@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.desktop
+package clutchapps.deutschify.desktop
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
@@ -13,8 +13,8 @@ import io.github.xxfast.androidx.compose.material3.windowsizeclass.LocalWindowSi
 import io.github.xxfast.decompose.router.LocalRouterContext
 import io.github.xxfast.decompose.router.RouterContext
 import io.github.xxfast.decompose.router.defaultRouterContext
-import io.github.xxfast.nytimes.di.appStorage
-import io.github.xxfast.nytimes.screens.home.HomeScreen
+import clutchapps.deutschify.di.appStorage
+import clutchapps.deutschify.screens.home.HomeScreen
 import net.harawata.appdirs.AppDirsFactory
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
@@ -25,7 +25,7 @@ fun main() {
     val rootRouterContext: RouterContext = defaultRouterContext(windowState = windowState)
 
     val userDataDir: String = AppDirsFactory.getInstance()
-      .getUserDataDir("io.github.xxfast.nytimes", "1.0.0", "xxfast")
+      .getUserDataDir("clutchapps.deutschify", "1.0.0", "xxfast")
 
     val path = Path(userDataDir)
     with(SystemFileSystem) { if(!exists(path)) createDirectories(path) }

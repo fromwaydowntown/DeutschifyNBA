@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.di
+package clutchapps.deutschify.di
 
 import kotlinx.io.files.Path
 

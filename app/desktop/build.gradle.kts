@@ -29,7 +29,7 @@ version = appVersion
 
 compose.desktop {
   application {
-    mainClass = "io.github.xxfast.nytimes.desktop.ApplicationKt"
+    mainClass = "clutchapps.deutschify.desktop.ApplicationKt"
 
     nativeDistributions {
       buildTypes.release {
@@ -49,14 +49,14 @@ compose.desktop {
       val iconsRoot = project.file("src/main/resources/icons")
 
       macOS {
-        iconFile.set { iconsRoot.resolve("nytimes-desktop.icns") }
+        iconFile.set { iconsRoot.resolve("Deutschify NBA-desktop.icns") }
         packageVersion = appVersion
         dmgPackageVersion = appVersion
         pkgPackageVersion = appVersion
       }
 
       windows {
-        iconFile.set { iconsRoot.resolve("nytimes-desktop.ico") }
+        iconFile.set { iconsRoot.resolve("Deutschify NBA-desktop.ico") }
         menuGroup = "DeutschifyNBA"
         // see https://wixtoolset.org/documentation/manual/v3/howtos/general/generate_guids.html
         upgradeUuid = "18159995-d967-4CD2-8885-77BFA97CFA9F"
@@ -65,7 +65,7 @@ compose.desktop {
       }
 
       linux {
-        iconFile.set { iconsRoot.resolve("nytimes-desktop.png") }
+        iconFile.set { iconsRoot.resolve("Deutschify NBA-desktop.png") }
       }
     }
   }

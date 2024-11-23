@@ -1,14 +1,14 @@
-package io.github.xxfast.nytimes.screens.news
+package clutchapps.deutschify.screens.news
 
 import app.cash.molecule.RecompositionMode.Immediate
 import app.cash.molecule.moleculeFlow
 import io.github.xxfast.decompose.router.RouterContext
 import io.github.xxfast.decompose.router.state
-import io.github.xxfast.nytimes.api.DeutschifyWebService
-import io.github.xxfast.nytimes.data.HttpClient
-import io.github.xxfast.nytimes.data.store
-import io.github.xxfast.nytimes.navigation.ViewModel
-import io.github.xxfast.nytimes.screens.news.NewsEvent.Refresh
+import clutchapps.deutschify.api.DeutschifyWebService
+import clutchapps.deutschify.data.HttpClient
+import clutchapps.deutschify.data.store
+import clutchapps.deutschify.navigation.ViewModel
+import clutchapps.deutschify.screens.news.NewsEvent.Refresh
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

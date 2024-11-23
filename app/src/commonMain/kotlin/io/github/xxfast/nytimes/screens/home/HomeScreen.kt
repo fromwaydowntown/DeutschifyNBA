@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.screens.home
+package clutchapps.deutschify.screens.home
 
 import androidx.compose.runtime.Composable
 import com.arkivanov.decompose.ExperimentalDecomposeApi
@@ -12,10 +12,10 @@ import io.github.xxfast.decompose.router.LocalRouterContext
 import io.github.xxfast.decompose.router.stack.RoutedContent
 import io.github.xxfast.decompose.router.stack.Router
 import io.github.xxfast.decompose.router.stack.rememberRouter
-import io.github.xxfast.nytimes.screens.home.StoryHomeScreen.Details
-import io.github.xxfast.nytimes.screens.home.StoryHomeScreen.List
-import io.github.xxfast.nytimes.screens.story.StoryScreen
-import io.github.xxfast.nytimes.screens.news.NewsScreen
+import clutchapps.deutschify.screens.home.StoryHomeScreen.Details
+import clutchapps.deutschify.screens.home.StoryHomeScreen.List
+import clutchapps.deutschify.screens.story.StoryScreen
+import clutchapps.deutschify.screens.news.NewsScreen
 
 @OptIn(ExperimentalDecomposeApi::class)
 @Composable

@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.navigation
+package clutchapps.deutschify.navigation
 
 import com.arkivanov.essenty.instancekeeper.InstanceKeeper
 import kotlinx.coroutines.CoroutineScope

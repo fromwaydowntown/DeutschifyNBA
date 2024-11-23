@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.navigation
+package clutchapps.deutschify.navigation
 
 import app.cash.molecule.AndroidUiDispatcher
 import com.arkivanov.essenty.instancekeeper.InstanceKeeper

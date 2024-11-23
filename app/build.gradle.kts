@@ -124,7 +124,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 }
 
 android {
-  namespace = "io.github.xxfast.nytimes.app"
+  namespace = "clutchapps.deutschify.app"
   compileSdk = 34
   defaultConfig {
     minSdk = 25

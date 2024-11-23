@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.web
+package clutchapps.deutschify.web
 
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.material3.MaterialTheme
@@ -12,7 +12,7 @@ import io.github.xxfast.androidx.compose.material3.windowsizeclass.LocalWindowSi
 import io.github.xxfast.decompose.router.LocalRouterContext
 import io.github.xxfast.decompose.router.RouterContext
 import io.github.xxfast.decompose.router.defaultRouterContext
-import io.github.xxfast.nytimes.screens.home.HomeScreen
+import clutchapps.deutschify.screens.home.HomeScreen
 import kotlinx.browser.document
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalMaterial3WindowSizeClassApi::class)

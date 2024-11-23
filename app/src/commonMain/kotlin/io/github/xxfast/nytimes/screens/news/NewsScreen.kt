@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.screens.news
+package clutchapps.deutschify.screens.news
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -42,14 +42,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import io.github.xxfast.androidx.compose.material3.windowsizeclass.LocalWindowSizeClass
 import io.github.xxfast.decompose.router.rememberOnRoute
-import io.github.xxfast.nytimes.components.TwoPanelScaffold
-import io.github.xxfast.nytimes.components.TwoPanelScaffoldAnimationSpec
-import io.github.xxfast.nytimes.models.ArticleUri
-import io.github.xxfast.nytimes.screens.home.StoryHomeScreen
-import io.github.xxfast.nytimes.screens.story.StoryScreen
-import io.github.xxfast.nytimes.screens.story.selectedArticle
-import io.github.xxfast.nytimes.screens.summary.StorySummaryView
-import io.github.xxfast.nytimes.utils.statusBarPadding
+import clutchapps.deutschify.components.TwoPanelScaffold
+import clutchapps.deutschify.components.TwoPanelScaffoldAnimationSpec
+import clutchapps.deutschify.models.ArticleUri
+import clutchapps.deutschify.screens.home.StoryHomeScreen
+import clutchapps.deutschify.screens.story.StoryScreen
+import clutchapps.deutschify.screens.story.selectedArticle
+import clutchapps.deutschify.screens.summary.StorySummaryView
+import clutchapps.deutschify.utils.statusBarPadding
 
 @Composable
 fun NewsScreen(
@@ -61,7 +61,7 @@ fun NewsScreen(
   val state: NewsState by viewModel.states.collectAsState()
 
   var selection: StoryHomeScreen? by remember { mutableStateOf(null) }
-  var article: io.github.xxfast.nytimes.screens.summary.SummaryState? by remember {
+  var article: clutchapps.deutschify.screens.summary.SummaryState? by remember {
     mutableStateOf(
       null
     )

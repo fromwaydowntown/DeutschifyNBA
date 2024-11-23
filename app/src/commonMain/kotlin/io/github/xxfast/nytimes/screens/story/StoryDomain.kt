@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.screens.story
+package clutchapps.deutschify.screens.story
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -7,11 +7,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import io.github.xxfast.kstore.KStore
-import io.github.xxfast.nytimes.api.DeutschifyWebService
-import io.github.xxfast.nytimes.components.AudioPlayer
-import io.github.xxfast.nytimes.components.createAudioPlayer
-import io.github.xxfast.nytimes.models.SavedArticles
-import io.github.xxfast.nytimes.models.SummaryState
+import clutchapps.deutschify.api.DeutschifyWebService
+import clutchapps.deutschify.components.AudioPlayer
+import clutchapps.deutschify.components.createAudioPlayer
+import clutchapps.deutschify.models.SavedArticles
+import clutchapps.deutschify.models.SummaryState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
@@ -20,7 +20,7 @@ import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
-var selectedArticle: io.github.xxfast.nytimes.screens.summary.SummaryState? = null
+var selectedArticle: clutchapps.deutschify.screens.summary.SummaryState? = null
 
 @Composable
 fun StoryDomain(

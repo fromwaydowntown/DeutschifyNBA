@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.components
+package clutchapps.deutschify.components
 
 interface AudioPlayer {
     suspend fun play(data: ByteArray)

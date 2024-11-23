@@ -1,6 +1,6 @@
-package io.github.xxfast.nytimes.components
+package clutchapps.deutschify.components
 
-import io.github.xxfast.nytimes.AndroidAudioPlayer
+import clutchapps.deutschify.AndroidAudioPlayer
 
 actual fun createAudioPlayer(): AudioPlayer {
   return AndroidAudioPlayer(appContext)

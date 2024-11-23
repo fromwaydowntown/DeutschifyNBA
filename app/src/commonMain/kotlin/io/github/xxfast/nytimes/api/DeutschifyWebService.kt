@@ -1,6 +1,6 @@
-package io.github.xxfast.nytimes.api
+package clutchapps.deutschify.api
 
-import io.github.xxfast.nytimes.models.GetArticlesResponse
+import clutchapps.deutschify.models.GetArticlesResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.accept

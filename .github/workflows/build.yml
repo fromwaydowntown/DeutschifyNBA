@@ -130,7 +130,7 @@ jobs:
         continue-on-error: true # TODO: Fix the certificates
         run: |
           cd app/ios
-          xcodebuild -project ios.xcodeproj -scheme NYTimes 
+          xcodebuild -project ios.xcodeproj -scheme Deutschify NBA 
 
   build_web:
     runs-on: ubuntu-latest

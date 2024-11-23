@@ -1,8 +1,8 @@
-package io.github.xxfast.nytimes// androidMain/kotlin/AndroidAudioPlayer.kt
+package clutchapps.deutschify// androidMain/kotlin/AndroidAudioPlayer.kt
 
 import android.content.Context
 import android.media.MediaPlayer
-import io.github.xxfast.nytimes.components.AudioPlayer
+import clutchapps.deutschify.components.AudioPlayer
 import java.io.File
 
 class AndroidAudioPlayer(private val context: Context) : AudioPlayer {

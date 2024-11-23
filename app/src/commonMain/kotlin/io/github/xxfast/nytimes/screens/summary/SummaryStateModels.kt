@@ -1,8 +1,8 @@
-package io.github.xxfast.nytimes.screens.summary
+package clutchapps.deutschify.screens.summary
 
-import io.github.xxfast.nytimes.models.SummaryState
-import io.github.xxfast.nytimes.models.ArticleUri
-import io.github.xxfast.nytimes.models.TopStorySection
+import clutchapps.deutschify.models.SummaryState
+import clutchapps.deutschify.models.ArticleUri
+import clutchapps.deutschify.models.TopStorySection
 import kotlinx.serialization.Serializable
 
 @Serializable

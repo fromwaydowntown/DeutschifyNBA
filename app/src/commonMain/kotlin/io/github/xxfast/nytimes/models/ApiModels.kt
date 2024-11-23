@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.models
+package clutchapps.deutschify.models
 
 import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmInline

@@ -1,3 +1,3 @@
-package io.github.xxfast.nytimes.components
+package clutchapps.deutschify.components
 
 expect fun createAudioPlayer(): AudioPlayer

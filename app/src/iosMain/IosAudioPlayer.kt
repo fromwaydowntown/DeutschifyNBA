@@ -1,7 +1,7 @@
 import platform.AVFoundation.*
 import platform.Foundation.*
 import kotlinx.cinterop.*
-import io.github.xxfast.nytimes.components.AudioPlayer
+import clutchapps.deutschify.components.AudioPlayer
 
 @OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
 class IosAudioPlayer : AudioPlayer {

@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.screens.news
+package clutchapps.deutschify.screens.news
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -8,11 +8,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import io.github.xxfast.kstore.KStore
-import io.github.xxfast.nytimes.api.DeutschifyWebService
-import io.github.xxfast.nytimes.models.SavedArticles
-import io.github.xxfast.nytimes.models.GetArticlesResponse
-import io.github.xxfast.nytimes.models.TopStorySection
-import io.github.xxfast.nytimes.screens.summary.SummaryState
+import clutchapps.deutschify.api.DeutschifyWebService
+import clutchapps.deutschify.models.SavedArticles
+import clutchapps.deutschify.models.GetArticlesResponse
+import clutchapps.deutschify.models.TopStorySection
+import clutchapps.deutschify.screens.summary.SummaryState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

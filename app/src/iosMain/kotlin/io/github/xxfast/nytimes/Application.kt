@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes
+package clutchapps.deutschify
 
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,8 +19,8 @@ import com.arkivanov.essenty.backhandler.BackDispatcher
 import io.github.xxfast.androidx.compose.material3.windowsizeclass.LocalWindowSizeClass
 import io.github.xxfast.decompose.router.LocalRouterContext
 import io.github.xxfast.decompose.router.RouterContext
-import io.github.xxfast.nytimes.di.appStorage
-import io.github.xxfast.nytimes.screens.home.HomeScreen
+import clutchapps.deutschify.di.appStorage
+import clutchapps.deutschify.screens.home.HomeScreen
 import kotlinx.cinterop.BetaInteropApi
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.autoreleasepool

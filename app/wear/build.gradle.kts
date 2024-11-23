@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-  namespace = "io.github.xxfast.nytimes.wear"
+  namespace = "clutchapps.deutschify.wear"
   compileSdk = 34
 
   defaultConfig {
-    applicationId = "io.github.xxfast.nytimes.wear"
+    applicationId = "clutchapps.deutschify.wear"
     minSdk = 30
     targetSdk = 34
     versionCode = 1

@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes
+package clutchapps.deutschify
 
 import io.github.xxfast.decompose.router.RouterContext
 import io.github.xxfast.decompose.router.defaultRouterContext

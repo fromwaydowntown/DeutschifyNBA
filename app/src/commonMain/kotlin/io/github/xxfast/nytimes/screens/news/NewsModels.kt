@@ -1,7 +1,7 @@
-package io.github.xxfast.nytimes.screens.news
+package clutchapps.deutschify.screens.news
 
-import io.github.xxfast.nytimes.models.TopStorySection
-import io.github.xxfast.nytimes.screens.summary.SummaryState
+import clutchapps.deutschify.models.TopStorySection
+import clutchapps.deutschify.screens.summary.SummaryState
 import kotlinx.serialization.Serializable
 
 val Loading: Nothing? = null

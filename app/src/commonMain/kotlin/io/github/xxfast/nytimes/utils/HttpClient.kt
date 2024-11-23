@@ -1,4 +1,4 @@
-package io.github.xxfast.nytimes.utils
+package clutchapps.deutschify.utils
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body

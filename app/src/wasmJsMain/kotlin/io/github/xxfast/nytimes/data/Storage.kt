@@ -1,8 +1,8 @@
-package io.github.xxfast.nytimes.data
+package clutchapps.deutschify.data
 
 import io.github.xxfast.kstore.KStore
 import io.github.xxfast.kstore.storage.storeOf
-import io.github.xxfast.nytimes.models.SavedArticles
+import clutchapps.deutschify.models.SavedArticles
 
 actual val store: KStore<SavedArticles> by lazy {
   storeOf(key = "saved", default = emptySet())
