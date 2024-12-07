@@ -1,4 +1,4 @@
-package clutchapps.deutschify.android
+package clutchapps.deutschifynba.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

@@ -11,11 +11,11 @@ plugins {
 }
 
 android {
-  namespace = "clutchapps.deutschify.android"
+  namespace = "clutchapps.deutschifynba.android"
   compileSdk = 34
 
   defaultConfig {
-    applicationId = "clutchapps.deutschify.android"
+    applicationId = "clutchapps.deutschifynba.android"
     minSdk = 25
     targetSdk = 34
     versionCode = 1

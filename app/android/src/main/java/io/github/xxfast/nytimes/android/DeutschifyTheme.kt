@@ -1,4 +1,4 @@
-package clutchapps.deutschify.android
+package clutchapps.deutschifynba.android
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
