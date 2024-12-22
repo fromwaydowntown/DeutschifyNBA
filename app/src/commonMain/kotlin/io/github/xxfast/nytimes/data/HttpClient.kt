@@ -17,7 +17,7 @@ val HttpClient = HttpClient {
 
   defaultRequest {
     url {
-      host = "deutschifytelegram.fly.dev"
+      host = "nba-news-in-easy-german.fly.dev"
       protocol = URLProtocol.HTTPS
     }
   }
